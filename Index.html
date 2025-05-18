@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JoesCosame | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+  --gray: #dbe3e9;
+  --cold-white: #f3fafd;
+  --petrol-blue: #1f2c35;
+  --dead-blue: #9db0be;
+  --bg-main: #e8f2f7;
+  --iron: #c6cfd6;
+  --icon-invisible: #aeb8be20;
+  --accent: #2a3a4a;
+}
+body {
+  background: var(--cold-white);
+  color: var(--petrol-blue);
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+.screen-center, .cv-screen, .settings-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+  width: 100vw;
+  position: absolute;
+  top: 0; left: 0;
+  background: var(--cold-white);
+}
+.logo-worn {
+  filter: grayscale(1) brightness(0.7) contrast(1.1);
+  margin-bottom: 28px;
+  opacity: 0.8;
+  width: 92px;
+  height: 92px;
+  display: block;
+}
+.ambient-noise {
+  font-size: 0.9rem;
+  color: var(--dead-blue);
+  margin-bottom: 26px;
+  letter-spacing: 1.2px;
+  opacity: 0.42;
+  text-align: center;
+  font-style: italic;
+  user-select: none;
+}
+.menu-basic {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 220px;
+  margin-top: 10px;
+}
+.menu-basic button {
+  background: var(--iron);
+  color: var(--petrol-blue);
+  border: none;
+  font-size: 1.09rem;
+  font-family: inherit;
+  border-radius: 5px;
+  padding: 13px 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.84;
+  transition: background 0.13s;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.menu-basic button:hover, .menu-basic button:focus {
+  background: var(--dead-blue);
+  color: #212d35;
+  opacity: 1;
+}
+.tooltip-sarcastic {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  background: #fff;
+  color: #455465;
+  font-size: 0.93rem;
+  border: 1px solid var(--dead-blue);
+  border-radius: 4px;
+  padding: 8px 14px;
+  box-shadow: none;
+  opacity: 0.97;
+  z-index: 200;
+  font-style: italic;
+  pointer-events: none;
+  transition: opacity 0.22s;
+}
+/* CV Presentation */
+.cv-main {
+  width: 390px;
+  background: var(--bg-main);
+  border: 1.5px solid var(--dead-blue);
+  border-radius: 7px;
+  padding: 32px 28px 16px 28px;
+  box-sizing: border-box;
+  margin-top: -30px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.cv-logo {
+  position: absolute;
+  top: 28px; right: 24px;
+  opacity: 0.2;
+  width: 42px; height: 42px;
+  filter: grayscale(1) brightness(0.8) contrast(1.08);
+}
+.cv-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 7px 0;
+  letter-spacing: 2px;
+}
+.cv-role {
+  font-size: 1.06rem;
+  color: var(--dead-blue);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.cv-section {
+  margin-top: 22px;
+  width: 100%;
+}
+.cv-section h3 {
+  font-size: 1.01rem;
+  color: var(--petrol-blue);
+  border-bottom: 1px solid var(--dead-blue);
+  margin: 0 0 7px 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.cv-section ul {
+  list-style: none;
+  padding: 0 0 0 2px;
+  margin: 0;
+}
+.cv-section li {
+  font-size: 0.99rem;
+  color: var(--accent);
+  margin-bottom: 5px;
+  position: relative;
+}
+.cv-section li:before {
+  content: '';
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--icon-invisible);
+  border-radius: 50%;
+  margin-right: 9px;
+  vertical-align: middle;
+}
+.cv-contact {
+  margin-top: 20px;
+  font-size: 0.98rem;
+  color: var(--dead-blue);
+}
+.cv-contact a {
+  color: var(--petrol-blue);
+  text-decoration: underline dotted;
+  margin-right: 12px;
+  opacity: 0.8;
+}
+.cv-contact a:hover {
+  color: var(--dead-blue);
+  opacity: 1;
+}
+.cv-ironico {
+  margin-top: 30px;
+  color: var(--dead-blue);
+  font-size: 0.97rem;
+  font-style: italic;
+  opacity: 0.68;
+  border-left: 2px solid var(--icon-invisible);
+  padding-left: 13px;
+}
+.cv-back {
+  margin-top: 28px;
+  background: var(--iron);
+  color: var(--petrol-blue);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  opacity: 0.84;
+  transition: background 0.13s;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-self: center;
+}
+.cv-back:hover, .cv-back:focus {
+  background: var(--dead-blue);
+  color: #212d35;
+  opacity: 1;
+}
+/* Settings/Soft Skills */
+.settings-main {
+  width: 390px;
+  background: var(--bg-main);
+  border: 1.5px solid var(--dead-blue);
+  border-radius: 7px;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  margin-top: -30px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.settings-title {
+  font-size: 1.43rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 7px;
+}
+.settings-desc {
+  color: var(--dead-blue);
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.status-section {
+  margin-bottom: 16px;
+  width: 100%;
+}
+.status-label {
+  font-size: 1.01rem;
+  color: var(--petrol-blue);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  opacity: 0.84;
+}
+.status-list {
+  list-style: none;
+  margin: 0; padding: 0 0 0 3px;
+}
+.status-item {
+  font-size: 0.98rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.status-max { color: #1d627a; font-weight: bold; }
+.status-bom { color: #50727f; }
+.status-dev { color: #7b868d; font-style: italic; }
+.status-bar {
+  width: 90px;
+  height: 7px;
+  background: var(--iron);
+  border-radius: 3px;
+  margin-right: 6px;
+  opacity: 0.52;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+.status-bar-inner-max {
+  background: #3d95be;
+  width: 100%;
+  height: 7px;
+  border-radius: 3px;
+}
+.status-bar-inner-bom {
+  background: #74b6d7;
+  width: 75%;
+  height: 7px;
+  border-radius: 3px;
+}
+.status-bar-inner-dev {
+  background: #bfcfd9;
+  width: 40%;
+  height: 7px;
+  border-radius: 3px;
+}
+.status-percent {
+  font-size: 0.96rem;
+  color: #7a8997;
+  margin-left: 8px;
+  min-width: 54px;
+  display: inline-block;
+}
+.status-missing {
+  color: #bfcfd9;
+  font-size: 0.93rem;
+  margin-left: 3px;
+  font-style: italic;
+  min-width: 50px;
+  display: inline-block;
+}
+.settings-back {
+  margin-top: 18px;
+  background: var(--iron);
+  color: var(--petrol-blue);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  opacity: 0.84;
+  transition: background 0.13s;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-self: center;
+}
+.settings-back:hover, .settings-back:focus {
+  background: var(--dead-blue);
+  color: #212d35;
+  opacity: 1;
+}
+/* Responsivo - mobile */
+@media (max-width: 650px) {
+  .screen-center, .cv-screen, .settings-screen {
+    padding: 0 2vw;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  .cv-main, .settings-main {
+    width: 98vw;
+    max-width: 440px;
+    padding: 18px 2vw 16px 2vw;
+    border-radius: 0;
+    min-width: unset;
+    margin-top: 0;
+  }
+  .logo-worn {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+  }
+  .cv-title, .settings-title {
+    font-size: 1.31rem;
+    word-break: break-all;
+  }
+  .status-bar {
+    width: 40vw;
+    min-width: 84px;
+    max-width: 120px;
+  }
+  .status-item {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    gap: 3px 6px;
+  }
+  .status-percent, .status-missing {
+    font-size: 0.92rem;
+    min-width: 41px;
+    margin-left: 4px;
+  }
+  .cv-contact, .settings-desc, .cv-role {
+    font-size: 0.94rem;
+    word-break: break-all;
+  }
+  .cv-back, .settings-back, .menu-basic button {
+    font-size: 0.97rem;
+    padding: 10px 12vw;
+    width: 100%;
+    min-width: unset;
+    box-sizing: border-box;
+  }
+  .menu-basic {
+    width: 98vw;
+    min-width: unset;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .cv-main, .settings-main {
+    width: 100vw;
+    max-width: none;
+    padding: 8px 2vw 8px 2vw;
+  }
+  .logo-worn {
+    width: 44px; height: 44px;
+  }
+  .cv-title, .settings-title {
+    font-size: 1.06rem;
+  }
+}
+@media (max-width: 350px) {
+  .cv-main, .settings-main {
+    padding: 2px 1vw 2px 1vw;
+  }
+  .cv-title, .settings-title {
+    font-size: 0.89rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- TELA INICIAL -->
+  <div class="screen-center" id="startScreen">
+    <img src="logo_worn.png" class="logo-worn" alt="Logo JoesCosame desgastado">
+    <div class="ambient-noise">
+      <span>[teclado distante] [impressora sofrendo] [notificação abafada]</span>
+    </div>
+    <div class="menu-basic">
+      <button id="startBtn">INICIAR</button>
+      <button id="settingsBtn">CONFIGURAÇÕES</button>
+      <button onclick="alert('Sair é fácil. Difícil é voltar.')">SAIR</button>
+    </div>
+    <div class="tooltip-sarcastic" id="tipBalloon" style="display:none;">
+      Clique em iniciar. Ou não.<br>É só um portfólio, não sua redenção.
+    </div>
+  </div>
+  <!-- CURRÍCULO -->
+  <div class="cv-screen" id="cvScreen" style="display:none;">
+    <div class="cv-main">
+      <img src="logo_worn.png" class="cv-logo" alt="Logo apagada">
+      <div class="cv-title">Júnior Vieira Vaz</div>
+      <div class="cv-role">Analista Contábil 1 / Cartão BRB S.A.</div>
+      <div style="color:#8a9ba5;font-size:0.97rem;margin-bottom:6px;">
+        Foco em conciliações, curadoria de dados e sobrevivência diária.<br>
+        Amante de animes, manhwa, jogos e do desafio de organizar o caos.  
+      </div>
+      <div class="cv-section">
+        <h3>Formação</h3>
+        <ul>
+          <li>Graduação em Ciências Contábeis – Estácio (2025)</li>
+          <li>MBA em Inteligência Fiscal e Tributária – IPOG (em andamento)</li>
+        </ul>
+      </div>
+      <div class="cv-section">
+        <h3>Skills</h3>
+        <ul>
+          <li>Conciliações contábeis</li>
+          <li>Curadoria de dados</li>
+          <li>Power BI (DAX e Power Query)</li>
+          <li>Integração de dados operacionais</li>
+          <li>Excel avançado</li>
+        </ul>
+      </div>
+      <div class="cv-contact">
+        <span>Email: <a href="mailto:juniorvaz1999@outlook.com">juniorvaz1999@outlook.com</a></span><br>
+        <span>GitHub: <a href="https://github.com/joescosame" target="_blank">joescosame</a></span><br>
+        <span>Goiás / DF</span>
+      </div>
+      <div class="cv-ironico">
+        “Missão principal: não deixar a contabilidade virar ficção. O resto é bônus.”
+      </div>
+      <button class="cv-back" onclick="goHome()">VOLTAR</button>
+    </div>
+  </div>
+  <!-- CONFIGURAÇÕES (SOFT SKILLS) -->
+  <div class="settings-screen" id="settingsScreen" style="display:none;">
+    <div class="settings-main">
+      <div class="settings-title">Status do Personagem</div>
+      <div class="settings-desc">
+        Configurações? Só mostra o que funciona (e o que falta).  
+        Ajuste de ironia ou volume do chefe não disponível nesta versão.
+      </div>
+      <div class="status-section">
+        <div class="status-label">Skill de elite</div>
+        <ul class="status-list">
+          <li class="status-item status-max">
+            <div class="status-bar"><div class="status-bar-inner-max"></div></div>
+            Autocontrole
+            <span class="status-percent">100%</span>
+            <span class="status-missing">Falta 0%</span>
+          </li>
+        </ul>
+      </div>
+      <div class="status-section">
+        <div class="status-label">Skills boas</div>
+        <ul class="status-list">
+          <li class="status-item status-bom">
+            <div class="status-bar"><div class="status-bar-inner-bom"></div></div>
+            Organização
+            <span class="status-percent">75%</span>
+            <span class="status-missing">Falta 25%</span>
+          </li>
+          <li class="status-item status-bom">
+            <div class="status-bar"><div class="status-bar-inner-bom"></div></div>
+            Foco
+            <span class="status-percent">75%</span>
+            <span class="status-missing">Falta 25%</span>
+          </li>
+          <li class="status-item status-bom">
+            <div class="status-bar"><div class="status-bar-inner-bom"></div></div>
+            Resiliência
+            <span class="status-percent">75%</span>
+            <span class="status-missing">Falta 25%</span>
+          </li>
+        </ul>
+      </div>
+      <div class="status-section">
+        <div class="status-label">Em desenvolvimento</div>
+        <ul class="status-list">
+          <li class="status-item status-dev">
+            <div class="status-bar"><div class="status-bar-inner-dev"></div></div>
+            Comunicação
+            <span class="status-percent">40%</span>
+            <span class="status-missing">Falta 60%</span>
+          </li>
+          <li class="status-item status-dev">
+            <div class="status-bar"><div class="status-bar-inner-dev"></div></div>
+            Empatia
+            <span class="status-percent">40%</span>
+            <span class="status-missing">Falta 60%</span>
+          </li>
+          <li class="status-item status-dev">
+            <div class="status-bar"><div class="status-bar-inner-dev"></div></div>
+            Proatividade
+            <span class="status-percent">40%</span>
+            <span class="status-missing">Falta 60%</span>
+          </li>
+        </ul>
+      </div>
+      <button class="settings-back" onclick="goHome()">VOLTAR</button>
+    </div>
+  </div>
+  <script>
+    // Tutorial irônico no hover
+    document.querySelector('.menu-basic button').addEventListener('mouseenter', () => {
+      document.getElementById('tipBalloon').style.display = 'block';
+    });
+    document.querySelector('.menu-basic button').addEventListener('mouseleave', () => {
+      document.getElementById('tipBalloon').style.display = 'none';
+    });
+
+    // Troca de tela: INICIAR -> CV
+    document.getElementById('startBtn').onclick = function() {
+      document.getElementById('startScreen').style.display = 'none';
+      document.getElementById('cvScreen').style.display = 'flex';
+    };
+
+    // Troca de tela: CONFIGURAÇÕES -> Status/Soft Skills
+    document.getElementById('settingsBtn').onclick = function() {
+      document.getElementById('startScreen').style.display = 'none';
+      document.getElementById('cvScreen').style.display = 'none';
+      document.getElementById('settingsScreen').style.display = 'flex';
+    };
+
+    // Voltar para a tela inicial
+    function goHome() {
+      document.getElementById('startScreen').style.display = 'flex';
+      document.getElementById('cvScreen').style.display = 'none';
+      document.getElementById('settingsScreen').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
